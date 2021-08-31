@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-Tw">
+<head>
+    <meta charset="UTF-8">
+    <title>訂單標籤預覽頁面</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            width: 210mm;
+            height: 297mm;
+            font-family : 標楷體;
+        }
+
+        .label {
+            width: 89mm;
+            height: 58.25mm;
+            padding: 8mm;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: left;
+        }
+
+        .sender_info {
+            position:relative;
+            margin-bottom: 10px;
+            width: 89mm;
+            height: 23.5mm;
+        }
+
+        .receiver_info {
+            position:relative;
+            margin-bottom: 10px;
+            width: 89mm;
+            height: 23.5mm;
+        }
+
+        .receiver_name {
+            position:relative;
+            width: 89mm;
+            height: 7mm;
+        }
+
+        .tel{
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .address{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contact_name{
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        .key{
+            font-size: 14pt;
+            width: 94px;
+            text-align: justify;
+        }
+
+        .value{
+            font-size: 14pt;
+            width: 244px;
+
+        }
+
+        p{
+            font-size: 14pt;
+            display: inline;
+            line-height: 16.8pt;
+        }
+
+        h1{
+            font-weight: bold;
+            font-size: 18pt;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            {% for label in left_label %}
+                <div class="label">
+                <div class="sender_info">
+                    <div class="tel">
+                        <div class="key">
+                            <p>連絡電話：</p>
+                        </div>
+                        <div class="value">
+                            <p>{{label.sender_tel}}</p>
+                        </div>
+                    </div>
+                    <div class="address">
+                        <div class="key">
+                            <p>寄件地址：</p>
+                        </div>
+                        <div class="value">
+                            <p>{{label.sender_address}}</p>
+                        </div>
+                    </div>
+                    <div class="contact_name">
+                        <div class="key">
+                            <p>聯 絡 人：</p>
+                        </div>
+                        <div class="value">
+                            <p>{{label.contact}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="receiver_info">
+                    <div class="tel">
+                        <div class="key">
+                            <p>連絡電話：</p>
+                        </div>
+                        <div class="value">
+                            <p>{{label.receiver_tel}}</p>
+                        </div>
+                    </div>
+                    <div class="address">
+                        <div class="key">
+                            <p>收件地址：</p>
+                        </div>
+                        <div class="value">
+                            <p>{{label.receiver_address}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="receiver_name">
+                    <h1>{{label.receiver_name}} 收</h1>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="right">
+            {% for label in right_label %}
+                <div class="label">
+                <div class="sender_info">
+                    <div class="tel">
+                        <div class="key">
+                            <p>連絡電話：</p>
+                        </div>
+                        <div class="value">
+                            <p>{{label.sender_tel}}</p>
+                        </div>
+                    </div>
+                    <div class="address">
+                        <div class="key">
+                            <p>寄件地址：</p>
+                        </div>
+                        <div class="value">
+                            <p>{{label.sender_address}}</p>
+                        </div>
+                    </div>
+                    <div class="contact_name">
+                        <div class="key">
+                            <p>聯 絡 人：</p>
+                        </div>
+                        <div class="value">
+                            <p>{{label.contact}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="receiver_info">
+                    <div class="tel">
+                        <div class="key">
+                            <p>連絡電話：</p>
+                        </div>
+                        <div class="value">
+                            <p>{{label.receiver_tel}}</p>
+                        </div>
+                    </div>
+                    <div class="address">
+                        <div class="key">
+                            <p>收件地址：</p>
+                        </div>
+                        <div class="value">
+                            <p>{{label.receiver_address}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="receiver_name">
+                    <h1>{{label.receiver_name}} 收</h1>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
